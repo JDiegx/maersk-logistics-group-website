@@ -5,11 +5,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  z-index: 1000; 
-  background-color: white; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: white;
 }
 
 .header__logo-container {
@@ -55,7 +55,7 @@
 }
 
 
-.header__menu-link{
+.header__menu-link {
   color: rgb(29, 29, 29);
   text-decoration: none;
 }
@@ -74,7 +74,7 @@
   background-size: cover;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   margin-top: 100px;
 }
 
@@ -95,6 +95,7 @@
 .main-logistic-page__text--highlight {
   width: 100%;
   font-size: 40px;
+  color: white;
 }
 
 .main-logistic-page__button {
@@ -104,7 +105,6 @@
   background-color: transparent;
   color: white;
   border-radius: 10px;
-  font-family: "Metrophobic", sans-serif;
   font-size: 15px;
   transition: ease 0.3s;
 }
@@ -118,9 +118,9 @@
   width: 100%;
   height: 700px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .main-logistic-page__target {
@@ -142,7 +142,7 @@
   align-items: start;
 }
 
-.target-icon__icon{
+.target-icon__icon {
   width: 45px;
 }
 
@@ -173,16 +173,15 @@
 }
 
 
-.main-logistic-page__section-three{
+.main-logistic-page__section-three {
   width: 100%;
-  height: 1100px;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
 }
 
-.section-three__content{
+.section-three__content {
   width: 300px;
   height: 140px;
   display: flex;
@@ -190,15 +189,24 @@
   justify-content: space-evenly;
 }
 
-.section-three__title{
+.section-three__title {
   font-size: 30px;
   color: rgb(66, 66, 66);
 }
 
-.section-three__description{
+.section-three__description {
   width: 300px;
   font-size: 15px;
   color: gray;
+}
+
+.section-three__targets {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .target {
@@ -211,21 +219,21 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.301);
 }
 
-.target__image{
+.target__image {
   width: 100%;
   height: 150px;
 }
 
-.target__title{
+.target__title {
   font-size: 20px;
 }
 
-.target__description{
+.target__description {
   color: gray;
   font-size: 14px;
 }
 
-.target-container__description-target-content{
+.target-container__description-target-content {
   width: 250px;
   height: 100px;
   display: flex;
@@ -235,7 +243,7 @@
 }
 
 
-.main-logistic-page__section-login{
+.main-logistic-page__section-login {
   width: 100%;
   height: 450px;
   display: flex;
@@ -243,7 +251,7 @@
   align-items: center;
 }
 
-.section-login__form{
+.section-login__form {
   width: 300px;
   height: 360px;
   border-radius: 10px;
@@ -254,7 +262,7 @@
   align-items: center;
 }
 
-.section-login__header{
+.section-login__header {
   width: 100%;
   height: 120px;
   display: flex;
@@ -263,18 +271,18 @@
   align-items: center;
 }
 
-.section-login__title{
+.section-login__title {
   font-size: 40px;
   font-weight: 600;
 }
 
-.section-login__description{
+.section-login__description {
   width: 90%;
   text-align: center;
   color: gray;
 }
 
-.section-login__input{
+.section-login__input {
   width: 280px;
   height: 43px;
   padding: 0px 20px;
@@ -284,7 +292,7 @@
   font-size: 14px;
 }
 
-.section-login__button{
+.section-login__button {
   width: 180px;
   height: 40px;
   border: none;
@@ -294,14 +302,14 @@
   font-size: 17px;
 }
 
-.section-login__input__i-havent-received-my-credentials{
+.section-login__input__i-havent-received-my-credentials {
   font-size: 14px;
   color: gray;
   cursor: pointer;
   text-decoration: underline;
 }
 
-.logistic-website-footer{
+.logistic-website-footer {
   width: 100%;
   height: 50px;
   display: flex;
@@ -309,6 +317,364 @@
   align-items: center;
 }
 
-.logo-maersk-footer{
+.logo-maersk-footer {
   width: 100px;
+}
+
+@media (min-width: 375px) {
+  .main-logistic-page__content {
+    height: 320px;
+  }
+
+  .main-logistic-page__section-one {
+    height: 410px;
+  }
+
+  .section-three__content {
+    width: 340px;
+  }
+
+  .target {
+    width: 320px;
+  }
+
+  .main-logistic-page__target {
+    width: 330px;
+  }
+
+  .section-three__description {
+    width: 100%;
+  }
+
+  .main-logistic-page__text--highlight {
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 425px) {
+  .main-logistic-page__section-two {
+    height: 750px;
+  }
+
+  .main-logistic-page__target {
+    width: 350px;
+    height: 200px;
+    margin: 20px;
+  }
+
+  .main-logistic-page__target-container {
+    width: 270px;
+  }
+
+  .main-logistic-page__target-title {
+    font-size: 23px;
+  }
+
+  .main-logistic-page__target-description {
+    font-size: 16px;
+  }
+
+  .section-three__content {
+    width: 400px;
+  }
+
+  .section-three__description {
+    font-size: 16px;
+  }
+
+  .main-logistic-page__section-three {
+    height: 1100px;
+  }
+
+  .target {
+    width: 350px;
+    height: 270px;
+    margin: 20px;
+  }
+
+  .target-container__description-target-content {
+    width: 280px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 15px;
+  }
+
+  .target__title {
+    font-size: 22px;
+  }
+
+  .target__description {
+    font-size: 15px;
+  }
+
+  .section-login__form {
+    width: 340px;
+    height: 370px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .section-login__input {
+    width: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__menu {
+    width: 70%;
+    height: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .main-logistic-page__content {
+    width: 650px;
+    height: 250px;
+  }
+
+  .main-logistic-page__text {
+    width: 500px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .main-logistic-page__section-two {
+    height: 500px;
+    justify-content: space-evenly;
+  }
+
+  .main-logistic-page__target {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.301);
+  }
+
+  .main-logistic-page__target-icon {
+    width: 60px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .target-icon__icon {
+    width: 45px;
+  }
+
+  .main-logistic-page__target-container {
+    width: 240px;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .main-logistic-page__target-title {
+    font-size: 20px;
+  }
+
+  .main-logistic-page__target-description {
+    font-size: 15px;
+    color: gray;
+  }
+
+  .section-three__content {
+    width: 700px;
+    height: 100px;
+  }
+
+
+  .main-logistic-page__target-button {
+    width: 110px;
+    height: 40px;
+    background-color: #00243d;
+    color: white;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .main-logistic-page__section-three {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-three__targets {
+    width: 100%;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .target {
+    width: 280px;
+    height: 260px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.301);
+    margin: 30px;
+  }
+
+  .target__image {
+    width: 100%;
+    height: 150px;
+  }
+
+  .target__title {
+    font-size: 20px;
+  }
+
+  .target__description {
+    color: gray;
+    font-size: 14px;
+  }
+
+  .target-container__description-target-content {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__menu {
+    width: 600px;
+    height: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .main-logistic-page__section-one {
+    height: 600px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 100px;
+  }
+
+  .main-logistic-page__content {
+    width: 700px;
+    height: 380px;
+    margin-left: 50px;
+  }
+
+  .main-logistic-page__text--highlight {
+    font-size: 70px;
+  }
+
+  .main-logistic-page__text {
+    width: 500px;
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
+  }
+
+  .main-logistic-page__section-two {
+    height: 300px;
+    justify-content: center;
+  }
+
+  .section-three__content {
+    width: 900px;
+    height: 100px;
+  }
+
+  .section-three__targets {
+    height: 350px;
+  }
+
+  .main-logistic-page__section-three {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-logistic-page__target {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.301);
+    margin: 10px;
+  }
+
+  .target {
+    width: 280px;
+    height: 260px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.301);
+    margin: 15px;
+  }
+
+  .main-logistic-page__section-login {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1440px){
+  .main-logistic-page__section-two {
+    height: 300px;
+    justify-content: space-evenly;
+  }
+  .main-logistic-page__target {
+    width: 350px;
+    height: 200px;
+    margin: 20px;
+  }
+  .main-logistic-page__target-container {
+    width: 270px;
+  }
+  .main-logistic-page__target-title {
+    font-size: 23px;
+  }
+  .main-logistic-page__target-description {
+    font-size: 16px;
+  }
+  .section-three__content {
+    width: 90%;
+    height: 100px;
+  }
+  .section-three__description {
+    width: 800px;
+    font-size: 18px;
+  }
+  .section-three__targets {
+    height: 350px;
+    justify-content: space-evenly;
+  }
 }
