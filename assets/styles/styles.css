@@ -298,6 +298,10 @@
   font-size: 14px;
 }
 
+.input-error {
+  border: 2px solid red;
+}
+
 .section-login__button {
   width: 180px;
   height: 40px;

@@ -31,7 +31,6 @@
                     <a href="#manage-zones-login" class="header__menu-link">Manage zones</a>
                 </li>
             </ul>
-            
         </nav>
     </header>
     <main class="main-logistic-page">
@@ -122,9 +121,10 @@
                         Please log in with the credentials provided by our Maersk team.
                     </p>
                 </div>
-                <input type="text" class="section-login__input section-login__input--user" placeholder="User">
-                <input type="text" class="section-login__input section-login__input--password" placeholder="Password">
+                <input type="text" id="email" class="section-login__input section-login__input--user" placeholder="Email" required>
+                <input type="password" id="password" class="section-login__input section-login__input--password" placeholder="Password" required>
                 <button type="submit" class="section-login__button">Manage zones</button>
+                <p id="error-message" style="color: red; display: none;"></p>
                 <p class="section-login__input__i-havent-received-my-credentials">I haven't received my credentials?</p>
             </form>
         </section>
@@ -132,5 +132,6 @@
             <img src="./assets/img/logo-maersk-logistics-group.png" alt="" class="logo-maersk-footer">
         </footer>
     </main>
+    <script type="module" src="./src/controllers/loginController.js"></script>
 </body>
 </html>

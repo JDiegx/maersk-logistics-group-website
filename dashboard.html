@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Maersk! | Integrated Container Logistics & Supply Chain Services</title>
+    <link rel="icon" href="/assets/img/icon-x-maersk-logistics.gif">
+    <link rel="stylesheet" href="/assets/styles/reset.css">
+    <link rel="stylesheet" href="./assets/styles/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Metrophobic&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo-container">
+            <img src="/assets/img/logo-maersk-logistics-group.png" alt="Logo of Maersk" class="header__logo">
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item">
+                    <a href="/index.html" class="header__nav-link">Go out</a>
+                </li>
+                <li class="header__nav-item-menu">
+                    <button class="header__menu-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+        <div class="sidebar__close-btn-container">
+            <button id="close-button" class="sidebar__close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+            </button>
+        </div>
+        <nav class="sidebar__nav">
+            <ul class="sidebar__nav-list">
+                <li class="sidebar__nav-list-item">
+                    <a href="#" class="slidebar__item-link">Home</a>
+                </li>
+                <li class="sidebar__nav-list-item">
+                    <a href="#" class="slidebar__item-link">Zones</a>
+                </li>
+                <li class="sidebar__nav-list-item">
+                    <a href="#" class="slidebar__item-link">Goods</a>
+                </li>
+                <li class="sidebar__nav-list-item">
+                    <a href="#" class="slidebar__item-link">Customers</a>
+                </li>
+            </ul>
+        </nav>       
+    </aside>    
+    <main>
+        <div class="home-container">
+            <div class="home-container__welcome-content">
+                <p class="home-container__tittle">Welcome to Maersk Warehouse Management System!</p>
+                <p class="home-container__description">We're here to help you optimize your logistics operations. Explore our tools designed to make inventory management easier.</p>
+            </div>
+            <div class="home-container__video-container">
+                <video src="./assets/img/1.mp4" autoplay loop muted class="home-container__video"></video>
+            </div>
+        </div>
+        <div class="zones-container hidden">
+            <h1>Zonas</h1>
+        </div>
+        <div class="goods-container hidden">
+            <h1>Goods</h1>
+        </div>
+        <div class="customers-container hidden">
+            <h1>Customers</h1>
+        </div>
+    </main>
+    <script src="./src/views/slidebar.js"></script>
+    <script src="./src/views/sectionsManager.js"></script>
+</body>
+</html>
