@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll(".slidebar__item-link"); // Enlaces del menú
-    const containers = document.querySelectorAll("main > div"); // Contenedores en <main>
+    const links = document.querySelectorAll(".sidebar__item-link"); // Enlaces del menú
+    const containers = document.querySelectorAll("main > div"); // Contenedores dentro de <main>
 
     // Función para mostrar el contenedor correspondiente
     function showContainer(containerClass) {
@@ -19,12 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", (event) => {
             event.preventDefault(); // Evitar el comportamiento por defecto del enlace
             
-            // Obtener el texto del enlace y construir la clase del contenedor
+            // Obtener el texto del enlace y convertirlo en el nombre de la clase
             const targetClass = link.textContent.trim().toLowerCase() + "-container";
+            
+            // Mostrar el contenedor correspondiente
             showContainer(targetClass);
         });
     });
 
-    // Mostrar el contenedor inicial (Home)
+    // Mostrar solo el contenedor inicial (Home)
     showContainer("home-container");
 });

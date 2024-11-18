@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Maersk! | Integrated Container Logistics & Supply Chain Services</title>
+    <title>Welcome to Maersk Warehouse Management System!| We're here to help you optimize your logistics operations.
+        Explore our tools designed to make inventory management easier.</title>
     <link rel="icon" href="/assets/img/icon-x-maersk-logistics.gif">
     <link rel="stylesheet" href="/assets/styles/reset.css">
     <link rel="stylesheet" href="./assets/styles/dashboard.css">
@@ -25,8 +26,10 @@
                 </li>
                 <li class="header__nav-item-menu">
                     <button class="header__menu-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                         </svg>
                     </button>
                 </li>
@@ -37,49 +40,105 @@
     <aside class="sidebar">
         <div class="sidebar__close-btn-container">
             <button id="close-button" class="sidebar__close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                 </svg>
             </button>
         </div>
         <nav class="sidebar__nav">
             <ul class="sidebar__nav-list">
                 <li class="sidebar__nav-list-item">
-                    <a href="#" class="slidebar__item-link">Home</a>
+                    <a href="#" class="sidebar__item-link">Home</a>
                 </li>
                 <li class="sidebar__nav-list-item">
-                    <a href="#" class="slidebar__item-link">Zones</a>
+                    <a href="#" class="sidebar__item-link">Zones</a>
                 </li>
                 <li class="sidebar__nav-list-item">
-                    <a href="#" class="slidebar__item-link">Goods</a>
+                    <a href="#" class="sidebar__item-link">Goods</a>
                 </li>
                 <li class="sidebar__nav-list-item">
-                    <a href="#" class="slidebar__item-link">Customers</a>
+                    <a href="#" class="sidebar__item-link">Customers</a>
                 </li>
             </ul>
-        </nav>       
-    </aside>    
+        </nav>
+    </aside>
     <main>
         <div class="home-container">
             <div class="home-container__welcome-content">
                 <p class="home-container__tittle">Welcome to Maersk Warehouse Management System!</p>
-                <p class="home-container__description">We're here to help you optimize your logistics operations. Explore our tools designed to make inventory management easier.</p>
+                <p class="home-container__description">We're here to help you optimize your logistics operations.
+                    Explore our tools designed to make inventory management easier.</p>
             </div>
             <div class="home-container__video-container">
                 <video src="./assets/img/1.mp4" autoplay loop muted class="home-container__video"></video>
             </div>
         </div>
         <div class="zones-container hidden">
-            <h1>Zonas</h1>
+            <div class="zones-container__zones-view-container">
+            </div>
+            <div class="zones-container__form-zones">
+                <div class="form-zones__tittle-container">
+                    <p class="form-zones__tittle">Create zone</p>
+                    <p class="form-zones__description">Register an area in our solutions room</p>
+                </div>
+                <form action="" class="form-zones__form-container" id="zoneForm">
+                    <div class="form-zones__input-container">
+                        <label for="zoneName" class="form-container__label">Enter the name of the area</label>
+                        <input type="text" class="form_container__input" placeholder="Example: Zone One, Blue Zone"
+                            id="zoneName">
+                    </div>
+                    <div class="form-zones__input-container">
+                        <label for="maxVolume" class="form-container__label">Enter the volume of the area</label>
+                        <input type="text" class="form_container__input" placeholder="Example: 1000" id="maxVolume">
+                    </div>
+                    <div class="form-zones__input-container">
+                        <label for="maxWeight" class="form-container__label">Enter the maximum weight of the
+                            area</label>
+                        <input type="text" class="form_container__input" placeholder="Example: 80kg" id="maxWeight">
+                    </div>
+                    <button type="submit" class="form-zones__button-form-zones">Create Zone</button>
+                </form>
+            </div>
         </div>
         <div class="goods-container hidden">
-            <h1>Goods</h1>
+            <div class="zones-container__zones-view-container">
+            </div>
+            <div class="goods-container__form-goods">
+                <div>
+                    <h1></h1>
+                </div>
+                <form id="merchandiseForm">
+                    <input type="text" id="names" placeholder="Nombre" required>
+                    <input type="text" id="description" placeholder="Descripción" required>
+                    
+                    <div>
+                        <label for="zones">Selecciona las zonas:</label>
+                        <select id="zones" name="zones" multiple required>
+                            <!-- Las opciones de las zonas se llenarán dinámicamente aquí -->
+                        </select>
+                    </div>
+                
+                    <input type="number" id="occupiedVolume" placeholder="Volumen que ocupa" required>
+                    <input type="number" id="occupiedWeight" placeholder="Peso que registra" required>
+                    <input type="date" id="entryDate" placeholder="Fecha ingreso" required>
+                    <input type="date" id="departureDate" placeholder="Fecha salida" required>
+                
+                    <button type="submit">Enviar</button>
+                </form>                                                     
+            </div>
+            <div class="goods-container-goods-view">
+            </div>
         </div>
         <div class="customers-container hidden">
             <h1>Customers</h1>
         </div>
     </main>
-    <script src="./src/views/slidebar.js"></script>
-    <script src="./src/views/sectionsManager.js"></script>
+    <script type="module" src="./src/views/slidebar.js"></script>
+    <script type="module" src="./src/views/sectionsManager.js"></script>
+    <script type="module" src="./src/views/zonesView.js"></script>
+    <script type="module" src="./src/views/merchandiseView.js"></script>
 </body>
+
 </html>
