@@ -211,7 +211,7 @@
 
 .zone-item{
     width: 100px;
-    height: 25px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -304,11 +304,11 @@
     align-items: center;
 }
 
-.goods-container-goods-view {
+.goods-container__goods-view-zones-container{
     width: 300px;
-    height: 500px;
-    border-radius: 10px;
+    height: 200px;
     background-color: rgba(220, 220, 220, 0.582);
+    border-radius: 10px;
 }
 
 .goods-container__form-goods{
@@ -316,6 +316,96 @@
     height: 350px;
     background-color: rgba(220, 220, 220, 0.582);
     border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.goods-container__container-tittle{
+    width: 300px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.goods-container__tittle{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.goods-container__description{
+    font-size: 15px;
+    color: gray;
+}
+
+.goods-container__form{
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goods-container__row{
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.goods-container__column{
+    width: 280px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.goods-container__label{
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.goods-container__select{
+    width: 280px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    color: gray;
+}
+
+
+.goods-container__input{
+    width: 130px;
+    height: 30px;
+    border: none;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.goods-container__button{
+    width: 120px;
+    height: 30px;
+    background-color: #00243d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+
+.goods-container-goods-view {
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: rgba(220, 220, 220, 0.582);
 }
 
 .hidden {

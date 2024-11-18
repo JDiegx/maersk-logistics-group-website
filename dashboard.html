@@ -103,30 +103,35 @@
             </div>
         </div>
         <div class="goods-container hidden">
-            <div class="zones-container__zones-view-container">
+            <div class="goods-container__goods-view-zones-container">
             </div>
             <div class="goods-container__form-goods">
-                <div>
-                    <h1></h1>
+                <div class="goods-container__container-tittle">
+                    <h1 class="goods-container__tittle">Register a good</h1>
+                    <p class="goods-container__description">Choose an area of ​​our solutions room</p>
                 </div>
-                <form id="merchandiseForm">
-                    <input type="text" id="names" placeholder="Nombre" required>
-                    <input type="text" id="description" placeholder="Descripción" required>
-                    
-                    <div>
-                        <label for="zones">Selecciona las zonas:</label>
-                        <select id="zones" name="zones" multiple required>
-                            <!-- Las opciones de las zonas se llenarán dinámicamente aquí -->
+                <form id="merchandiseForm" class="goods-container__form">
+                    <div class="goods-container__row">
+                        <input type="text" id="name" placeholder="Name" required class="goods-container__input">
+                        <input type="text" id="description" placeholder="Description" required class="goods-container__input">
+                    </div>
+                    <div class="goods-container__column">
+                        <label for="zones" class="goods-container__label">Select the zone:</label>
+                        <select id="zones" name="zones" class="goods-container__select">
+                            <option value=""></option>
+                            <option value="" class="goods-container__option">Beta Zone</option>
                         </select>
                     </div>
-                
-                    <input type="number" id="occupiedVolume" placeholder="Volumen que ocupa" required>
-                    <input type="number" id="occupiedWeight" placeholder="Peso que registra" required>
-                    <input type="date" id="entryDate" placeholder="Fecha ingreso" required>
-                    <input type="date" id="departureDate" placeholder="Fecha salida" required>
-                
-                    <button type="submit">Enviar</button>
-                </form>                                                     
+                    <div class="goods-container__row">
+                        <input type="number" id="occupiedVolume" placeholder="Occupied Volume" required class="goods-container__input">
+                        <input type="number" id="occupiedWeight" placeholder="Recorded Weight" required class="goods-container__input">
+                    </div>
+                    <div class="goods-container__row">
+                        <input type="date" id="entryDate" placeholder="Entry Date" required class="goods-container__input">
+                        <input type="date" id="departureDate" placeholder="Departure Date" required class="goods-container__input">
+                    </div>
+                    <button type="submit" class="goods-container__button">Submit</button>
+                </form>                                                                              
             </div>
             <div class="goods-container-goods-view">
             </div>

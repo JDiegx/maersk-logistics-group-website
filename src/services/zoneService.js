@@ -7,7 +7,6 @@ export async function createZone(zoneData) {
             },
             body: JSON.stringify(zoneData)
         });
-
         if (!response.ok) {
             const error = await response.json();
             throw new Error(error.message || response.statusText);
