@@ -1,36 +1,22 @@
-export async function createMerchandise(merchandiseData) {
-    const apiUrl = 'http://localhost:8080/logisticAPP/v1/merchandises';
-
+// service.js
+export async function submitMerchandise(payload) {
     try {
-        const response = await fetch(apiUrl, {
+        const response = await fetch('http://localhost:8080/logisticAPP/v1/merchandises', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(merchandiseData)
+            body: JSON.stringify(payload), // Enviar el objeto JSON como body
         });
 
         if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(`Error del servidor: ${errorData.message || 'Sin detalles'}`);
+            throw new Error('Failed to submit the form');
         }
-    } catch (error) {
-        console.error('Error en el servicio:', error);
-        throw error;
-    }
-}
 
-export async function fetchZones() {
-    const apiUrl = 'http://localhost:8080/logisticAPP/v1/winery_zones';
-
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error('Error al obtener las zonas de la API');
-        }
-        return await response.json();
+        const result = await response.json();
+        return { success: true, data: result }; // Devolver el resultado exitoso
     } catch (error) {
-        console.error('Error al obtener zonas:', error);
-        throw error;
+        console.error('Error:', error);
+        return { success: false, error: error.message }; // Devolver el resultado de error
     }
 }

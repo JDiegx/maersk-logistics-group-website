@@ -380,7 +380,6 @@
     color: gray;
 }
 
-
 .goods-container__input{
     width: 130px;
     height: 30px;
@@ -406,6 +405,68 @@
     height: 500px;
     border-radius: 10px;
     background-color: rgba(220, 220, 220, 0.582);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.goods-view__good{
+    width: 280px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+}
+
+.goods-view__image{
+    width: 100px;
+    height: 100px;
+    background-color: gainsboro;
+}
+
+.goods-view__details{
+    width: 150px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 5px 0px 0px 10px;
+}
+
+.goods-view__title{
+    font-weight: 600;
+}
+
+.goods-view__description{
+    font-size: 13px;
+    color: gray;
+}
+
+.goods-view__date{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.goods-view__entry-date, 
+.goods-view__exit-date{
+    font-size: 10px;
+}
+
+.goods-view__zone{
+    width: 80px;
+    height: 20px;
+    font-size: 10px;
+    background-color: #00243d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
 }
 
 .hidden {

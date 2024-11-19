@@ -1,59 +1,71 @@
-import { createMerchandise, fetchZones } from '../services/merchandiseService.js';
+import { submitMerchandise } from '../services/merchandiseService.js'; // Corrección en el nombre del archivo
+import { getZones } from '../services/zoneService.js';
 
-document.getElementById('merchandiseForm').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Evita el envío tradicional del formulario
+const form = document.getElementById('merchandiseForm');
+const zonesSelect = document.getElementById('zones');
 
-    // Capturar los valores de los inputs
-    const names = document.getElementById('name').value;
+// Cargar las zonas al inicio
+async function loadZones() {
+    try {
+        const zones = await getZones(); // Obtiene las zonas de la API
+
+        // Agregar las opciones al select
+        zones.forEach(zone => {
+            const option = document.createElement('option');
+            option.value = zone.zoneId; // Asigna el ID de la zona al value
+            option.textContent = zone.zoneName; // Muestra el nombre de la zona
+            zonesSelect.appendChild(option); // Agrega la opción al select
+        });
+    } catch (error) {
+        console.error("Error al cargar zonas:", error);
+        alert("Hubo un problema al cargar las zonas. Intenta más tarde.");
+    }
+}
+
+// Llamar a loadZones para cargar las zonas cuando la página se carga
+loadZones();
+
+form.addEventListener('submit', async (event) => {
+    event.preventDefault(); // Previene el envío del formulario de la manera tradicional
+
+    // Obtener los valores de los campos
+    const name = document.getElementById('name').value;
     const description = document.getElementById('description').value;
     const occupiedVolume = parseFloat(document.getElementById('occupiedVolume').value);
     const occupiedWeight = parseFloat(document.getElementById('occupiedWeight').value);
     const entryDate = document.getElementById('entryDate').value;
     const departureDate = document.getElementById('departureDate').value;
+    const zoneId = zonesSelect.value; // Obtener el ID de la zona seleccionada
+    const customerId = 1; // Valor por defecto
 
-    // Validación de los campos obligatorios
-    if (!names || !description || !occupiedVolume || !occupiedWeight || !entryDate || !departureDate) {
-        alert('Por favor, complete todos los campos obligatorios.');
+    if (!zoneId) {
+        alert("Por favor selecciona una zona válida.");
         return;
     }
 
-    // Crear el objeto con los datos
-    const merchandiseData = {
+    const payload = {
         occupiedVolume,
         occupiedWeight,
-        names,
+        names: name,
         description,
         entryDate,
-        departureDate
+        departureDate,
+        wineryZoneId: zoneId, // Convertir zoneId a wineryZoneId
+        customerId, // Valor por defecto
     };
 
-    // Llamar al servicio para enviar los datos
-    try {
-        await createMerchandise(merchandiseData);
-        alert('Mercancía creada con éxito');
-        document.getElementById('merchandiseForm').reset(); // Limpiar formulario
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Hubo un error al crear la mercancía. Revisa los datos enviados.');
-    }
-});
-
-document.addEventListener('DOMContentLoaded', async () => {
-    const zonesSelect = document.getElementById('zones');
+    console.log("Payload enviado:", payload);
 
     try {
-        const zones = await fetchZones();
-
-        // Llenar el select con las zonas obtenidas
-        zones.forEach(zone => {
-            const option = document.createElement('option');
-            option.value = zone.zoneName;
-            option.textContent = zone.zoneName;
-            option.className = 'goods-container__option';
-            zonesSelect.appendChild(option);
-        });
+        const result = await submitMerchandise(payload);
+        if (result.success) {
+            alert('Formulario enviado exitosamente.');
+            form.reset(); // Limpiar el formulario
+        } else {
+            alert('Error al enviar el formulario. Por favor, inténtalo nuevamente.');
+        }
     } catch (error) {
-        console.error('Error al cargar las zonas:', error);
-        alert('Hubo un error al cargar las zonas. Intente nuevamente más tarde.');
+        console.error("Error al enviar el formulario:", error);
+        alert("Ocurrió un error al enviar el formulario. Intenta más tarde.");
     }
 });

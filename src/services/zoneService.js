@@ -19,7 +19,6 @@ export async function createZone(zoneData) {
     }
 }
 
-
 export async function getZones() {
     try {
         const response = await fetch("http://localhost:8080/logisticAPP/v1/winery_zones", {
@@ -34,9 +33,12 @@ export async function getZones() {
             throw new Error(error.message || response.statusText);
         }
 
-        return await response.json();
+        const zones = await response.json();
+        
+        return zones;
     } catch (error) {
         console.error("Error fetching zones:", error);
         throw error; // Lanzamos el error para manejarlo en la capa de vista
     }
 }
+
