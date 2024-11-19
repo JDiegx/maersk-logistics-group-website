@@ -146,18 +146,128 @@
                         </div>
                         <p class="goods-view__zone">Zone Beta</p>
                     </div>
-                </div>      
+                </div>  
+                <div class="goods-view__good">
+                    <div class="goods-view__image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="goods-view__details">
+                        <h1 class="goods-view__title">Mercancia</h1>
+                        <p class="goods-view__description">Description: </p>
+                        <div class="goods-view__date">
+                            <p class="goods-view__entry-date"><strong>Entry Date: </strong> </p>
+                            <p class="goods-view__exit-date"><strong>Entry Date: </strong></p>
+                        </div>
+                        <p class="goods-view__zone">Zone Beta</p>
+                    </div>
+                </div>     
+                <div class="goods-view__good">
+                    <div class="goods-view__image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="goods-view__details">
+                        <h1 class="goods-view__title">Mercancia</h1>
+                        <p class="goods-view__description">Description: </p>
+                        <div class="goods-view__date">
+                            <p class="goods-view__entry-date"><strong>Entry Date: </strong> </p>
+                            <p class="goods-view__exit-date"><strong>Entry Date: </strong></p>
+                        </div>
+                        <p class="goods-view__zone">Zone Beta</p>
+                    </div>
+                </div> 
+                <div class="goods-view__good">
+                    <div class="goods-view__image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="goods-view__details">
+                        <h1 class="goods-view__title">Mercancia</h1>
+                        <p class="goods-view__description">Description: </p>
+                        <div class="goods-view__date">
+                            <p class="goods-view__entry-date"><strong>Entry Date: </strong> </p>
+                            <p class="goods-view__exit-date"><strong>Entry Date: </strong></p>
+                        </div>
+                        <p class="goods-view__zone">Zone Beta</p>
+                    </div>
+                </div> 
             </div>
         </div>
         <div class="customers-container hidden">
-            <h1>Customers</h1>
+            <div class="customers-container__form-container">
+                <div class="customers-container__form-description">
+                    <p class="customers-container__form-title">Create a client</p>
+                    <p class="customers-container__form-text">You need to create a client that will be associated with the product, which will be stored in one of our zones in our solutions room.</p>
+                </div>
+                <form class="customers-container__form" id="customerForm">
+                    <input class="customers-container__form-input" type="text" id="name" placeholder="Name">
+                    <input class="customers-container__form-input" type="text" id="town" placeholder="Town">
+                    <input class="customers-container__form-input" type="text" id="departament" placeholder="Department">
+                    <input class="customers-container__form-input" type="text" id="address" placeholder="Address">
+                    <input class="customers-container__form-input" type="text" id="postalCode" placeholder="Postal Code">
+                    <input class="customers-container__form-input" type="text" id="rol" placeholder="Role">
+                    <input class="customers-container__form-input" type="email" id="email" placeholder="Email">
+                    <input class="customers-container__form-input" type="text" id="phone" placeholder="Phone">
+                    <button class="customers-container__form-button" type="submit">Create Customer</button>
+                </form>
+            </div>                       
         </div>
     </main>
     <script type="module" src="./src/views/slidebar.js"></script>
     <script type="module" src="./src/views/sectionsManager.js"></script>
     <script type="module" src="./src/views/zonesView.js"></script>
-    <script type="module" src="./src/views/merchandiseView.js">
+    <script type="module" src="./src/views/merchandiseView.js"></script>
+    <script>
+        document.getElementById("customerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+        
+            // Capturar los valores de los campos
+            const customerData = {
+                names: document.getElementById("name").value,
+                departament: document.getElementById("departament").value,
+                town: document.getElementById("town").value,
+                address: document.getElementById("address").value,
+                postalCode: document.getElementById("postalCode").value,
+                rol: document.getElementById("rol").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value
+            };
+        
+            // Enviar los datos a la API sin validaciones
+            fetch("http://localhost:8080/logisticAPP/v1/customers", {
+                method: "POST", // Usar el método POST para enviar los datos
+                headers: {
+                    "Content-Type": "application/json" // Indicar que estamos enviando JSON
+                },
+                body: JSON.stringify({
+                    names: customerData.names,
+                    departament: customerData.departament,
+                    town: customerData.town,
+                    address: customerData.address,
+                    postalCode: customerData.postalCode,
+                    rol: customerData.rol,
+                    email: customerData.email,
+                    phone: customerData.phone
+                }) // Convertir el objeto a una cadena JSON
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Customer created successfully!");
+                    
+                    // Limpiar el formulario
+                    document.getElementById("customerForm").reset();
+                } else {
+                    response.json().then(errorData => {
+                        console.error("Error details:", errorData);
+                        alert("Error creating customer: " + errorData.message);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while creating the customer.");
+            });
+        });
     </script>
+    
 </body>
 
 </html>

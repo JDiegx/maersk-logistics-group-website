@@ -87,3 +87,4 @@ async function initializeZonesView() {
 
 // Inicializamos la vista de zonas cuando la página se cargue
 initializeZonesView();
+

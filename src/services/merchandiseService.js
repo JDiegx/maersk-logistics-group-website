@@ -20,3 +20,26 @@ export async function submitMerchandise(payload) {
         return { success: false, error: error.message }; // Devolver el resultado de error
     }
 }
+
+export async function getMerchandise() {
+    const apiUrl = 'https://example.com/api/merchandise'; // Reemplaza con la URL real de tu API
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
+        }
+
+        const merchandise = await response.json();
+        return merchandise; // Se espera que este sea un array con la lista de mercancías
+    } catch (error) {
+        console.error("Error al obtener mercancías:", error);
+        throw error; // Relanza el error para manejarlo donde se llame esta función
+    }
+}
