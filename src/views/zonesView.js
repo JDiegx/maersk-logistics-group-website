@@ -14,11 +14,22 @@ async function renderZones() {
         zones.forEach(zone => {
             zoneNames.add(zone.zoneName); // Guardamos los nombres de las zonas en el set
 
+            // Calculamos el porcentaje de ocupación para el volumen y el peso
+            const volumePercentage = (zone.occupiedVolume / zone.maxVolume) * 100;
+            const weightPercentage = (zone.occupiedWeight / zone.maxWeight) * 100;
+
+            // Calculamos el porcentaje general (promedio simple de volumen y peso)
+            const totalPercentage = (volumePercentage + weightPercentage) / 2;
+
             // Creamos un bloque para cada zona
             const zoneElement = document.createElement('div');
             zoneElement.classList.add('zone-item'); // Clase para cada zona
 
-            zoneElement.innerHTML = `<h3>${zone.zoneName}</h3>`;
+            // Insertamos el nombre y el porcentaje general de capacidad ocupada
+            zoneElement.innerHTML = `
+                <h3>${zone.zoneName}</h3>
+                <p>${totalPercentage.toFixed(2)}%</p>
+            `;
 
             // Insertamos el bloque de la zona en el contenedor
             zonesContainer.appendChild(zoneElement);
@@ -31,9 +42,19 @@ async function renderZones() {
     }
 }
 
+// Función para actualizar las zonas en intervalos regulares
+function startRealTimeUpdates() {
+    setInterval(async () => {
+        await renderZones(); // Actualiza las zonas cada 5 segundos
+    }, 5000); // 5000 ms = 5 segundos
+}
+
 // Llamamos a renderZones cuando se cargue la página
 async function initializeZonesView() {
     const zoneNames = await renderZones();
+
+    // Iniciamos las actualizaciones en tiempo real
+    startRealTimeUpdates();
 
     // Manejador de evento para el envío del formulario de creación de zona
     document.getElementById("zoneForm").addEventListener("submit", async function (e) {
@@ -72,7 +93,7 @@ async function initializeZonesView() {
                 document.getElementById("zoneForm").reset(); // Resetea todos los campos del formulario
 
                 // Recargamos las zonas para reflejar la nueva zona creada
-                const updatedZoneNames = await renderZones(); // Vuelve a renderizar las zonas con los datos actualizados
+                await renderZones(); // Vuelve a renderizar las zonas con los datos actualizados
             } else {
                 const error = await response.json();
                 alert("Error al crear la zona: " + (error.message || response.statusText));
@@ -87,4 +108,3 @@ async function initializeZonesView() {
 
 // Inicializamos la vista de zonas cuando la página se cargue
 initializeZonesView();
-

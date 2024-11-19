@@ -211,15 +211,19 @@
 
 .zone-item{
     width: 100px;
-    height: 30px;
+    height: 40px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     font-size: 13px;
     margin: 5px;
     background-color: #00243d;
     color: white;
     border-radius: 5px;
+}
+
+.zone-item p{
 }
 
 .zones-container__form-zones {
