@@ -27,9 +27,11 @@ async function renderZones() {
 
             // Insertamos el nombre y el porcentaje general de capacidad ocupada
             zoneElement.innerHTML = `
-                <h3>${zone.zoneName}</h3>
-                <p>${totalPercentage.toFixed(2)}%</p>
-            `;
+            <h3>${zone.zoneName}</h3>
+            <p>V-O: ${volumePercentage.toFixed(2)}%</p>
+            <p>P-O: ${weightPercentage.toFixed(2)}%</p>
+            <p>G-O: ${totalPercentage.toFixed(2)}%</p>
+        `;        
 
             // Insertamos el bloque de la zona en el contenedor
             zonesContainer.appendChild(zoneElement);
